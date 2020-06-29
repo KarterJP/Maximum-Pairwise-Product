@@ -2,47 +2,17 @@ import java.util.*;
 import java.io.*;
 
 public class MaximumPairwiseProduct {
-    static double getMaxPairwiseProduct(int[] numbers) {
-        double max_product = 0;
-        double n = numbers.length;
-
-        for (int first = 0; first < n; ++first) {
-            for (int second = first + 1; second < n; ++second) {
-                max_product = Math.max(max_product,
-                        numbers[first] * numbers[second]);
-            }
-        }
-
-        return max_product;
-    }
-
     public static void main(String[] args) {
-//        while(true) {
-//            int n = (int)(Math.random() * 10 + 2);
-//            int[] numbers = new int[n];
-//            for (int i = 0; i < n; i++) {
-//                numbers[i] = (int)(Math.random() * 10);
-//            }
-//            double slowMax = getMaxPairwiseProduct(numbers);
-//            double fastMax = getMaxPairwiseProductFast(numbers);
-//            System.out.println(n);
-//            System.out.println(Arrays.toString(numbers));
-//            System.out.println(fastMax + "   " + slowMax);
-//            System.out.println("-----------------------------------------------------");
-//            if (fastMax != slowMax) {
-//                break;
-//            }
-//        }
         FastScanner scanner = new FastScanner(System.in);
         int n = scanner.nextInt();
         int[] numbers = new int[n];
         for (int i = 0; i < n; i++) {
             numbers[i] = scanner.nextInt();
         }
-        System.out.printf("%.0f\n", getMaxPairwiseProductFast(numbers));
+        System.out.printf("%.0f\n", getMaxPairwiseProduct(numbers));
     }
 
-    static double getMaxPairwiseProductFast(int[] numbers) {
+    static double getMaxPairwiseProduct(int[] numbers) {
         double max_product = 0;
         double max_num1 = 0;
         double max_num2 = 0;
